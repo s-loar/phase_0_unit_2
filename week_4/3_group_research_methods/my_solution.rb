@@ -50,17 +50,17 @@ end
 
 # Person 4
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
+  source.reject!{|element| element.to_s.include? thing_to_delete}
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
+  source.reject!{|key| key.to_s.include? thing_to_delete}
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# The #reject! method works on the elements of the enumerable object, 
+# array or hash, and remove those elements for which the block 
+# returns true.
 
 
 ################## DRIVER CODE ###################################
@@ -77,9 +77,13 @@ p my_hash_sorting_method(my_family_pets_ages) == [["Annabelle", 2], ["Ditto", 5]
 p my_array_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "only", 3 ]
 p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
+
 # Reflect!
-# 
-# 
-# 
-# 
+# I started by Googling ways to remove elements from arrays and hashes. I found mention of 3 methods: 
+# slice, select and reject. I liked how with reject, I could directly remove elements and that it 
+# worked for both arrays and hashes in the same way. I liked constructing the single line that did
+# the removal, and how I could use it as is for both methods I had to construct. I do feel confident with
+# the learning objectives and enjoyed this unit.
+
+
 # 
