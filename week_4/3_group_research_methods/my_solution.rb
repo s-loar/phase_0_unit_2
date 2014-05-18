@@ -7,10 +7,12 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
 # Person 1's solution
 def my_array_finding_method(source, thing_to_find)
   # Your code here!
+  source.select { |x| x.to_s.include? thing_to_find }
 end
 
 def my_hash_finding_method(source, thing_to_find)
   # Your code here!
+  source.select { |key, value| value.to_i == thing_to_find }.keys
 end
 
 # Identify and describe the ruby method you implemented. 
@@ -20,11 +22,15 @@ end
 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
-  # Your code here!
+  source.each_with_index do |value, i|
+    source[i] += thing_to_modify if value.kind_of?(Integer) 
+  end
 end
 
 def my_hash_modification_method(source, thing_to_modify)
-  # Your code here!
+  source.each_pair do |(key,value)|
+      source[key] += thing_to_modify if value.kind_of?(Integer)
+  end
 end
 
 # Identify and describe the ruby method you implemented. 
@@ -35,11 +41,11 @@ end
 
 # Person 3
 def my_array_sorting_method(source)
-  # Your code here!
+  source.sort{|a,b| a.to_s<=>b.to_s}
 end
 
 def my_hash_sorting_method(source)
-  # Your code here!
+  source.sort{|a,b| a[0]<=>b[0]}
 end
 
 # Identify and describe the ruby method you implemented. 
@@ -59,7 +65,7 @@ end
 
 # Identify and describe the ruby method you implemented. 
 # The #reject! method works on the elements of the enumerable object, 
-# array or hash, and remove those elements for which the block 
+# array or hash, and removes those elements for which the block 
 # returns true.
 
 
