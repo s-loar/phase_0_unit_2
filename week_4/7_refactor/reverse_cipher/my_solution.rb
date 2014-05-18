@@ -1,7 +1,7 @@
 # U2.W4: Refactor Cipher Solution
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 
 # 1. Solution
