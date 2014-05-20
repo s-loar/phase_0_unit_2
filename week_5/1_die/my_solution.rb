@@ -10,24 +10,24 @@
 # Steps:
 # in initialize, raise an error if the number of sides is not at least 1
 # set the number of sides to the passed sides
-# in sides method, return the number of sides
-# in the roll method, return a random number up to the number of sides
+# Define a method, sides, that returns the number of sides
+# Define a method, roll, that returns a random side number
 
 
 # 3. Initial Solution
 # class Die
 #   def initialize(sides)
 #   	raise ArgumentError.new("There must be at least 1 side.") if sides.to_i < 1 
-#     @number_of_sides = sides
+#     @sides = sides
 #   end
   
 #   def sides
-#     return @number_of_sides
+#     return @sides
 #   end
   
 #   def roll
-#     return (1..@number_of_sides).to_a.sample unless @number_of_sides == 1
-#     return @number_of_sides
+#     return (1..@sides).to_a.sample unless @sides == 1
+#     return @sides
 #   end
 # end
 
@@ -37,15 +37,15 @@
 class Die
   def initialize(sides)
   	raise ArgumentError.new("There must be at least 1 side.") if sides < 1 
-    @number_of_sides = sides
+    @sides = sides
   end
   
   def sides
-    return @number_of_sides
+    return @sides
   end
   
   def roll
-    return (@number_of_sides == 1 && 1) || [*1..@number_of_sides].sample
+    return (@sides == 1 && 1) || [*1..@sides].sample
   end
 end
 
