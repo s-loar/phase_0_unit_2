@@ -10,22 +10,22 @@ class Drawer
 
   attr_reader :contents
 
-  # Are there any more methods needed in this class?
+  # Are there any more methods needed in this class? None that I am aware of.
 
-  def initialize
+  def initialize # set the instance variables to parameter values
     @contents = []
     @open = true
   end
 
-  def open
+  def open # set the drawer to open. Nevr used.
     @open = true
   end
 
-  def close
+  def close # set the drawer to closed. never used
     @open = false
   end 
 
-  def add_item( item )
+  def add_item( item ) # add an item to the drawer
     @contents << item
   end
 
@@ -45,7 +45,7 @@ class Drawer
     @contents = [] # added this line to actually empty the contents
   end
 
-  def view_contents
+  def view_contents # this lists out the contents of the drawer
     puts "The drawer contains:"
       @contents.each {|silverware| puts "- " + silverware.type }
     puts "- Nothing" if @contents == []
@@ -57,17 +57,17 @@ class Silverware
 
   # Are there any more methods needed in this class? No, added the clean attribute reader.
 
-  def initialize(type, clean = true)
+  def initialize(type, clean = true) # set the instance variables
     @type = type
     @clean = clean
   end
 
-  def eat
+  def eat # output a string and set the silverware to not clean
     puts "eating with the #{@type}"
     @clean = false
   end
 
-  def clean_silverware
+  def clean_silverware # set the siverware to clean
   	@clean = true
   end
 
@@ -111,6 +111,7 @@ def assert
   raise "Assertion failed!" unless yield
 end
 
+
 spoon_new = Silverware.new("spoon") 
 silverware_drawer.add_item(spoon_new)
 assert { silverware_drawer.contents[0] == spoon_new } # is our spoon in the drawer the one we put in?
@@ -118,9 +119,16 @@ spoon = silverware_drawer.remove_item(spoon_new)
 assert { spoon.clean } # is our retreived spoon clean?
 assert { silverware_drawer.contents == [] } # is the drawer empty now?
 
+assert { fork.clean }
 
 
 
 # 5. Reflection 
+# My strategy was to follow the instructions closely. First was to indent the code and add missing statements
+# that I spotted from that. Then I ran the code and fixed things from the error messages. Once I got that working
+# I added some driver code that used the assert method. We have a couple of methods that are never called. They
+# are open and close on the drawer. We could remove those. I feel that I understand the learning compentencies.
+# For some reason, this was more vague and conflicting to me to figure out what I needed to do.
+
 
 
