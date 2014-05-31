@@ -42,6 +42,23 @@
 #     @actions = []
 #     @distance_traveled = 0.0
 #     @current_speed = 0
+#     @pizzas = []
+#   end
+
+#   def add_pizza( pizza )
+#   	@pizzas << pizza 
+#   	@actions << "Added a " + pizza.type + " pizza."
+#   end
+
+#   def deliver_pizza
+#   	@pizzas.reverse!
+#   	pizza = @pizzas.pop
+#   	@pizzas.reverse!
+#   	@actions << "Delivered a " + pizza.type + " pizza."
+#   end
+
+#   def number_of_pizzas_in_car
+#   	@pizzas.length
 #   end
 
 #   def drive( distance_to_drive, speed_limit=@current_speed )
@@ -74,6 +91,15 @@
 #   end
 
 # end
+
+# class Pizza
+# 	attr_reader :type
+
+# 	def initialize( type )
+# 		@type = type 
+# 	end
+# end
+
 
 
 # 4. Refactored Solution
@@ -209,7 +235,14 @@ honda.display_log
 
 
 # 5. Reflection
-
-
+# My strategy was to copy the user stories and delivery instructions as comments. Then list the attributes
+# and methods I though the user stories called for. Then I wrote the driver tests from the delivery
+# instructions using the attributes and methods in the pseudocode. Then I started running the code and 
+# tests and building in the minium to get this to work. Afterwards, I then added the pizza carrier logic and 
+# new Pizza class. I did them at the same time to cut down on the rework I would have to do. I really did 
+# not have any questions while I was doing this exercise. The components of this were things we have done
+# previously. I am confident that I understand the learning compentencies. I enjoyed running this and seeing
+# the complex classes work and display for me. I did not like making typos, as they can cause a headach when 
+# the code does not run.
 
 
