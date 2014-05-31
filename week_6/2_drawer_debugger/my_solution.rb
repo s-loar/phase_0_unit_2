@@ -23,16 +23,16 @@ class Drawer
 
   def close # set the drawer to closed. never used
     @open = false
-  end 
+  end
 
   def add_item( item ) # add an item to the drawer
     @contents << item
   end
 
-  def remove_item(item = @contents.pop) #what is `#pop` doing? 
-  	# pop is pulling the last item off the array of contents if no item passed and item is set to that.
-  	# puts item
-  	# puts @contents
+  def remove_item(item = @contents.pop) #what is `#pop` doing?
+    # pop is pulling the last item off the array of contents if no item passed and item is set to that.
+    # puts item
+    # puts @contents
 
     @contents.delete(item) # delete the matching item from the contents if it is still there.
 
@@ -47,7 +47,7 @@ class Drawer
 
   def view_contents # this lists out the contents of the drawer
     puts "The drawer contains:"
-      @contents.each {|silverware| puts "- " + silverware.type }
+    @contents.each {|silverware| puts "- " + silverware.type }
     puts "- Nothing" if @contents == []
   end
 end
@@ -68,7 +68,7 @@ class Silverware
   end
 
   def clean_silverware # set the siverware to clean
-  	@clean = true
+    @clean = true
   end
 
 end
@@ -76,9 +76,9 @@ end
 knife1 = Silverware.new("knife")
 
 silverware_drawer = Drawer.new
-silverware_drawer.add_item(knife1) 
+silverware_drawer.add_item(knife1)
 silverware_drawer.add_item(Silverware.new("spoon"))
-silverware_drawer.add_item(Silverware.new("fork")) 
+silverware_drawer.add_item(Silverware.new("fork"))
 silverware_drawer.view_contents
 
 silverware_drawer.remove_item
@@ -92,7 +92,7 @@ silverware_drawer.view_contents
 
 removed_knife = silverware_drawer.remove_item(sharp_knife)
 removed_knife.eat
-removed_knife.clean_silverware 
+removed_knife.clean_silverware
 
 silverware_drawer.view_contents
 silverware_drawer.dump
@@ -112,7 +112,7 @@ def assert
 end
 
 
-spoon_new = Silverware.new("spoon") 
+spoon_new = Silverware.new("spoon")
 silverware_drawer.add_item(spoon_new)
 assert { silverware_drawer.contents[0] == spoon_new } # is our spoon in the drawer the one we put in?
 spoon = silverware_drawer.remove_item(spoon_new)
@@ -123,12 +123,9 @@ assert { fork.clean }
 
 
 
-# 5. Reflection 
+# 5. Reflection
 # My strategy was to follow the instructions closely. First was to indent the code and add missing statements
 # that I spotted from that. Then I ran the code and fixed things from the error messages. Once I got that working
 # I added some driver code that used the assert method. We have a couple of methods that are never called. They
 # are open and close on the drawer. We could remove those. I feel that I understand the learning compentencies.
 # For some reason, this was more vague and conflicting to me to figure out what I needed to do.
-
-
-

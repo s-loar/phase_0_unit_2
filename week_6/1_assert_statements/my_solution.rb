@@ -15,7 +15,7 @@ end
 
 # 2. Pseudocode what happens when the code above runs
 # The assert method is defined
-# The passed block of code is executed in place of the key word 'yield'. 
+# The passed block of code is executed in place of the key word 'yield'.
 # if the block returns true, nothing happens.
 # if it returns false, an error is raised.
 # name is set to bettysue.
@@ -26,45 +26,45 @@ end
 class CreditCard
 
   def initialize(card_number)
-  	if card_number.to_s.length != 16 then
-  	  # If the card number does not have 16 digits, then raise an error
-  	  raise ArgumentError.new("The credit card number must have 16 digits.")
-  	end
-  	@card_number = card_number
-  end 
+    if card_number.to_s.length != 16 then
+      # If the card number does not have 16 digits, then raise an error
+      raise ArgumentError.new("The credit card number must have 16 digits.")
+    end
+    @card_number = card_number
+  end
 
   def check_card
-  	sum = 0
-  	digit_count = 0
+    sum = 0
+    digit_count = 0
 
-  	numbers = @card_number.to_s.reverse # We need to work from the end, so reverse the card number
-  	
-  	# loop through each digit of the reversed card number
-  	numbers.each_char { |digit|
-  	  digit = digit.to_i  # convert it back to a number
-  	  
-  	  # Double every odd numbered digit
-  	  if digit_count.odd?
-  	  	digit *= 2
-  	  end
+    numbers = @card_number.to_s.reverse # We need to work from the end, so reverse the card number
 
-  	  # if the digit is >= to 10 then add the parts of that number into a single number less than 10
-  	  # the largest doubled digit can only be 18 which is 9 * 2
-  	  if digit >= 10 
-  	  	digit = (digit - 10) + 1
-  	  end 
+    # loop through each digit of the reversed card number
+    numbers.each_char { |digit|
+      digit = digit.to_i  # convert it back to a number
 
-  	  # add the digit to the sum
-  	  sum += digit
-  	  digit_count += 1 # increment the digit counter for the next loop
-  	   
-  	}
+      # Double every odd numbered digit
+      if digit_count.odd?
+        digit *= 2
+      end
 
-  	# determine if the sum is evenly divided by 10. If so the number is valid
-  	(sum % 10).zero?
+      # if the digit is >= to 10 then add the parts of that number into a single number less than 10
+      # the largest doubled digit can only be 18 which is 9 * 2
+      if digit >= 10
+        digit = (digit - 10) + 1
+      end
+
+      # add the digit to the sum
+      sum += digit
+      digit_count += 1 # increment the digit counter for the next loop
+
+    }
+
+    # determine if the sum is evenly divided by 10. If so the number is valid
+    (sum % 10).zero?
 
   end
-  
+
 end
 
 
@@ -90,8 +90,7 @@ assert { card_2.check_card }
 
 # 5. Reflection
 # My strategy was to follow the instructions carefully and work through the exercise.
-# I have seen yield before, so I knew what to expect. I had no question about this, 
+# I have seen yield before, so I knew what to expect. I had no question about this,
 # and did not consult any resources. The objectives of this exercise were to convert
 # our old driver code to this assert method, andI feel that I accomplished this.
 # I enjoyed doing this, as it was not too challenging and it worked as I expected it to.
-
