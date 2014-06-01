@@ -97,7 +97,7 @@ assert { boggle_board.get_cell( [3,3] ) == "e" }
 assert { boggle_board.get_cell( [2,2] ) == "l" }
 
 # implement tests for each of the methods here:
-assert { boggle_board.create_word( [2,1], [1,1], [1,2], [0,3]) == "code" } #=> returns "code"  
+assert { boggle_board.create_word( [2,1], [1,1], [1,2], [0,3]) == "code" } #=> returns "code"
 assert { boggle_board.create_word( [0,1], [0,2], [1,2]) == "rad" } #=> creates what california slang word?
 assert { boggle_board.create_word( [0,1], [1,1], [0,2], [1,2]) == "road" }
 assert { boggle_board.create_word( [2,0], [3,1], [3,0]) == "eat" }
@@ -118,8 +118,6 @@ assert { boggle_board.get_col( 3 ) == ["e", "t", "r", "e"] }
 # My driver code then needed to be refactored to use our assert method, and some new tests were needed for
 # the new #get_cell method. I did not have any questions while working on this and I did not use any
 # other resources. The biggest thing I figured out was that I should have used the map method in the #get_col
-# method. Not sure why I did not see that last week. Tha cut out a few lines of code. I feel that I understand 
+# method. Not sure why I did not see that last week. Tha cut out a few lines of code. I feel that I understand
 # the learning compentencies for this exercise. I enjoyed reworking last weeks exercise into a class. It was a little
 # tedious redoing the driver code to use the assert method.
-
-
